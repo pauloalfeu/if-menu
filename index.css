@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-image: url('./assets/background-for-page.png');
+    background-image: url('https://github.com/pauloalfeu/if-menu/blob/main/ifmenu/menuapp/templates/assets/background-for-page.png?raw=true');
     background-size: 500vh 100vh;
     background-repeat: no-repeat;
     color: #fff;
