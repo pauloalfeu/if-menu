@@ -1,15 +1,18 @@
-## if menu: Facilitando pedidos em restaurantes
+<img src="https://github.com/pauloalfeu/if-menu/blob/main/ifmenu/menuapp/templates/assets/logo.png?raw=true" width="200" height="120"/>
+
+## if(Menu): print("Facilitando pedidos em restaurantes")
 
 **O que é o if menu?**
 
-O if menu é um sistema web desenvolvido para simplificar o processo de pedidos em restaurantes de pequeno porte. Com ele, clientes podem realizar pedidos de forma rápida e eficiente, enquanto os estabelecimentos otimizam a gestão de seus pedidos.
+O 'if(Menu):' é um sistema web desenvolvido para simplificar o processo de pedidos em restaurantes de pequeno porte. Com ele, clientes podem realizar pedidos de forma rápida e eficiente, enquanto os estabelecimentos otimizam a gestão de seus pedidos.
 
 **Tecnologias Utilizadas:**
 
+* **Python:** Linguagem de programação principal do projeto, utilizada em conjunto com o Django.
 * **Django:** Framework Python para desenvolvimento web, utilizado para construir a lógica do backend e as APIs.
 * **JavaScript:** Linguagem de programação para criar interações dinâmicas na interface do usuário.
 * **Bootstrap:** Framework CSS para design responsivo e rápido desenvolvimento de interfaces.
-* **Python:** Linguagem de programação principal do projeto, utilizada em conjunto com o Django.
+
 
 **Desenvolvido por:**
 
@@ -22,7 +25,7 @@ O if menu é um sistema web desenvolvido para simplificar o processo de pedidos 
 O projeto if menu está organizado da seguinte forma:
 
 * **`if_menu/`:** Diretório principal do projeto.
-    * **`if_menu/`:** Módulo principal do aplicativo Django.
+    * **`menuapp/`:** Módulo principal do aplicativo Django.
         * **`models.py`:** Define os modelos de dados (produtos, pedidos, clientes).
         * **`views.py`:** Contém as views que renderizam as páginas e processam as requisições.
         * **`urls.py`:** Define as URLs do aplicativo e mapeia as URLs para as views.
