@@ -33,5 +33,5 @@ O projeto if menu está organizado da seguinte forma:
         * **`static/`:** Armazena arquivos estáticos como CSS, JavaScript e imagens.
     * **`requirements.txt`:** Lista as dependências do projeto.
 
-
+##### site is live on [GitHub Pages](https://pauloalfeu.github.io/if-menu/)
 
