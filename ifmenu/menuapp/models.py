@@ -1,10 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class Cliente(models.Model):
-    nome = models.CharField(max_length=200)
+class Cliente(AbstractUser):
     contato = models.CharField(max_length=200, null=True, blank=True)
-    def __str__(self):
-        return self.nome
+    email = models.EmailField(unique=True, null=False)
+
 
 class Gerente(models.Model):
      login = models.CharField(max_length=200)
