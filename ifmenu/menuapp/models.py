@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
 
 class CustomUser(AbstractUser):
     contato = models.CharField(max_length=100, null=True, blank=True)
@@ -18,7 +19,7 @@ CATEGORY_CHOICES = [
 
 class Produto(models.Model):
     nome_prod = models.CharField(max_length=200)
-    valor_und = models.FloatField()
+    preco_unitario = models.DecimalField()
     descricao_prod = models.CharField(max_length=600)
     category_prod = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     img_prod = models.ImageField(upload_to='produtos_imagens/')
@@ -36,13 +37,13 @@ STATUS_CHOICES = [
     ('finalizado', 'Finalizado'),
 ]
 
+class ItemPedido(models.Model):
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    quantidade = models.PositiveSmallIntegerField()
+
 class Pedido(models.Model):
+    cliente = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pendente')
     valor_total = models.DecimalField(max_digits=10, decimal_places=2)
     data_pedido = models.DateTimeField(default=timezone.now)
-    cliente = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    itens_pedido = models.ForeignKey(ItensPedido, on_delete=models.CASCADE)
-
-class ItensPedido(models.Model):
-    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
-    quantidade = models.PositiveSmallIntegerField(null=True, blank=True)
+    itens_pedidos = models.ManyToManyField(ItemPedido)
